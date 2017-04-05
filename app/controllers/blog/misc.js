@@ -1,22 +1,13 @@
 var express = require('express'),
-  router = express.Router(),
-  mongoose = require('mongoose'),
-  Post = mongoose.model('Post');
+  router = express.Router();
 
 module.exports = function (app) {
   app.use('/', router);
 };
 
 router.get('/', function (req, res, next) {
-  // Post.find(function (err, posts) {
-  Post.find().populate('author').populate('category').exec(function(err,posts){
-    if (err) return next(err);
-    res.render('blog/index', {
-      title: 'Node Blog',
-      posts: posts,
-      pretty:true
-    });
-  });
+  //请求首页默认响应文章页
+  res.redirect('/posts');
 });
 router.get('/about', function (req, res, next) {
     res.render('blog/index', {

@@ -1,7 +1,12 @@
 extends layout
 
 block content
-    h2.page-header NodeBlog
+    h2.page-header
+        = category.name
+        分类下的所有文章
+        | (
+        =posts.length
+        | )
     each post in posts
         div.post
             h3.post-title
