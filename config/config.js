@@ -9,7 +9,7 @@ var config = {
       name: 'hello-express'
     },
     port: process.env.PORT || 3000,
-    db: 'mongodb://localhost/hello-express-development'
+    db: 'mongodb://localhost/nodeblog'
   },
 
   test: {
